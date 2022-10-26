@@ -28,6 +28,8 @@ if [ "${BASE_DISTRO}" == "ubuntu" ]; then
     [ -n "$BASE_USER_PASSWORD" ] || BASE_USER_PASSWORD=ubuntu
 elif [ "${BASE_DISTRO}" == "raspios64" ]; then
     [ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/*-{raspbian,raspios}-*-arm64-*.{zip,7z,xz} | head -n 1`
+elif [ "${BASE_DISTRO}" == "armbian" ]; then
+    [ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/Orangepizero2*.{zip,7z,xz} | head -n 1`
 else
     # Default image raspbian
     [ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/*-{raspbian,raspios}*.{zip,7z,xz} | head -n 1`
